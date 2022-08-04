@@ -23,7 +23,7 @@ public class 組ぷよ : MonoBehaviour
             i++;
         }
     }
-    
+
     // Update is called once per frame
     void Update()
     {
@@ -33,34 +33,34 @@ public class 組ぷよ : MonoBehaviour
         if (this.delta > this.span)
         {
             this.delta = 0.0f;
-            transform.Translate(0, 0f, 0, Space.World);
+            transform.Translate(0, 0, 0, Space.World); //ここを(0, -0.1f, 0, Space.World)にすると自動落下
         }
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-           
-                this.gameObject.transform.position += new Vector3(-1, 0, 0);
+
+            this.gameObject.transform.position += new Vector3(-1, 0, 0);
         }
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             this.gameObject.transform.position += new Vector3(1, 0, 0);
         }
-            transform.Translate(key, 0, 0, Space.World);
+        transform.Translate(key, 0, 0, Space.World);
 
-            if (Input.GetKeyDown(KeyCode.DownArrow))
-            {
-                transform.Translate(0, -1.0f, 0, Space.World);
-            }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            transform.Translate(0, -1.0f, 0, Space.World);
+        }
 
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
             this.gameObject.transform.RotateAround(transform.position, new Vector3(0, 0, 1), -90);
-            }
+        } 
 
             
             if (Input.GetKeyDown(KeyCode.Tab))
             {
                 transform.Rotate(0, 0, 90.0f);
-            }
+        }
         
         if (nowy == -5f)
         {
